@@ -28,25 +28,31 @@ function addItem (item) {
     // Create a new p element
     let newPElement = document.createElement('p');
     // Create two new button elements
-    let firstButtonElement = document.createElement('button');
+    // let firstButtonElement = document.createElement('button');
     let secondButtonElement = document.createElement('button');
     // Add class name to the button elements
-    firstButtonElement.classList = 'edit-button';
+    // firstButtonElement.classList = 'edit-button';
     secondButtonElement.classList = 'delete-button';
     // Append a text node inside the button elements
-    firstButtonElement.appendChild(document.createTextNode('Edit'));
+    // firstButtonElement.appendChild(document.createTextNode('Edit'));
     secondButtonElement.appendChild(document.createTextNode('Delete'));
     // Append the new p and button elements inside the new li element
     newLiElement.appendChild(newPElement);
-    newLiElement.appendChild(firstButtonElement);
+    // newLiElement.appendChild(firstButtonElement);
     newLiElement.appendChild(secondButtonElement);
     // Append input value inside new p element
     let inputValue = document.createTextNode(newTask.value);
     newPElement.appendChild(inputValue);
     // Append the new li element inside incomplete task
-    if (newTask.value !== '') {
-        incompleteTask.appendChild(newLiElement);
+    if (newTask.value === '') {
+        alert('Input a task');
+    } else {
+        let newTodo = incompleteTask.appendChild(newLiElement);
+        incompleteTask.prepend(newTodo);
+        // incompleteTask.appendChild(newLiElement);
+        newTask.value = ''
     }
+    
     
 }
 
@@ -60,3 +66,10 @@ function deleteItem (item) {
     }
 
 }
+
+// incompleteTask.addEventListener('click', editItem);
+
+// function editItem (item) {
+
+
+// }
