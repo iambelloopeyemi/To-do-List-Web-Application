@@ -52,8 +52,7 @@ function addItem (item) {
         // incompleteTask.appendChild(newLiElement);
         newTask.value = ''
     }
-    
-    
+
 }
 
 incompleteTask.addEventListener('click', deleteItem);
