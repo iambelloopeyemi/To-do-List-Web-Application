@@ -44,7 +44,7 @@ function addItem (item) {
     let inputValue = document.createTextNode(newTask.value);
     newPElement.appendChild(inputValue);
     // Append the new li element inside incomplete task
-    if (newTask.value === '') {
+    if (newTask.trim.value === '') {
         alert('Input a task');
     } else {
         let newTodo = incompleteTask.appendChild(newLiElement);
